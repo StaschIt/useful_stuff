@@ -8,7 +8,7 @@ This Dockerfile is for everybody who has problems to bring SharepointFramework t
 - Create project
   - `mkdir your-new-project`
   - `cd your-new-project` 
-  - `docker run --net=host -it --rm -v ${PWD}:/usr/app/spfx spfx-angular`
+  - `docker run --net=host -it --rm -v ${PWD}:/usr/app/spfx your-image-name`
   - `yo @pnp/spfx`
 - Run project
   - `gulp serve`
