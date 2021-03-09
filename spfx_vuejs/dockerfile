@@ -1,0 +1,17 @@
+FROM python:2.7
+
+EXPOSE 5432 4321 35729
+
+RUN apt update && apt install -y nodejs npm
+
+RUN npm i -g @pnp/generator-spfx @angular/cli gulp yo --unsafe-perm
+
+VOLUME /usr/app/spfx
+WORKDIR /usr/app/spfx
+
+RUN useradd --create-home --shell /bin/bash spfx && \
+    chown -R spfx:spfx /usr/app/spfx
+
+USER spfx
+
+CMD /bin/bash
